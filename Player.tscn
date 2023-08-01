@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg7gvbuy3efhl"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_a14j3"]
+[ext_resource type="Texture2D" uid="uid://di36ivqcg5w68" path="res://Fruit-vege/char1-left-empty.png" id="1_uomlf"]
+[ext_resource type="Texture2D" uid="uid://c02u3ojunf8qj" path="res://Fruit-vege/char1-right-empty.png" id="8_kniev"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5gh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uomlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_uomlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_uomlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kniev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kniev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kniev")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tcaf"]
+size = Vector2(96, 224)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_a14j3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(3.63636, 3.55556)
+sprite_frames = SubResource("SpriteFrames_r5gh8")
+animation = &"Walk"
+speed_scale = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4tcaf")
