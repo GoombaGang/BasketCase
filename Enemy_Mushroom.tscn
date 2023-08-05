@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://r8p0jq1vhqfb"]
+
+[ext_resource type="Script" path="res://EnemyMushroom.gd" id="1_c7cdm"]
+[ext_resource type="Texture2D" uid="uid://dsrsir2mbecf5" path="res://items/Grey_Knight.png" id="2_msaju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bipsy"]
+radius = 32.0
+
+[node name="EnemyMushroom" type="CharacterBody2D"]
+script = ExtResource("1_c7cdm")
+
+[node name="Mushroom" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.38419e-07, -2.38419e-07)
+scale = Vector2(4, 4)
+texture = ExtResource("2_msaju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bipsy")
